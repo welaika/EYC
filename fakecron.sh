@@ -2,6 +2,7 @@
 
 selfpath=$(dirname $0)
 source ${selfpath}/lib.sh
+TZ='Europe/Rome'
 
 while getopts "f:" opt; do
     case $opt in
