@@ -3,7 +3,6 @@
 selfpath=$(dirname $0)
 log=${selfpath}/fakecron.log
 source ${selfpath}/lib.sh
-TZ='Europe/Rome'
 
 while getopts "f:" opt; do
     case $opt in
