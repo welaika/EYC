@@ -28,7 +28,11 @@ function launcher(){
   createpid && (
       trap "rm -f ${selfpath}/${frequency}/${pid}" 0 1 2 3 15
       /bin/bash $1
-      $? && echo "[`date`] $1 execution went ok" || echo "[`date`] $1 execution went BAD"
+      if [[ $? == 0 ]]; then
+        echo "[`date`] $1 execution went ok" | tee -a $log
+      else
+        echo "[`date`] $1 execution went BAD" | tee -a $log
+      fi
     ) 
 }
 
