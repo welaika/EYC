@@ -22,9 +22,11 @@ Anyway if you are in an unix environement and you can use your cronjobs to execu
 
 * go to your cronjob panel and set up a few of them like
 
+    ```bash
     */15 * * * * /bin/bash /path/to/script/eyc.sh -f fifteen
     0 0 * * * /bin/bash /path/to/script/eyc.sh -f daily
     5 0 1 * * /bin/bash /path/to/script/eyc.sh -f monthly
+    ```
 
 * put your scripts inside the right directory; the where is self explanatory due to dir names :). We have a daily example script *HelloWorld.sh* inside *./daily/*. The name of the script is not important at all, **but, please, put the .sh extension in fron of them!**
 
