@@ -1,4 +1,4 @@
-# FakeCron
+# EYC
 
 ## Extending cronjob starting from a single o few cronjobs
 
