@@ -49,7 +49,7 @@ function createpid(){
     touch ${selfpath}/${frequency}/${pid}
     return 0
   else
-    echo "Script already running: pid ${frequency}/${pid} alredy present" >> ${selfpath}/fakecron.log 2>&1
+    echo "Script already running: pid ${frequency}/${pid} alredy present" >> $log 2>&1
     return 1
   fi
 }
