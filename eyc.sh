@@ -1,7 +1,7 @@
 #!/bin/bash
 
 selfpath=$(dirname $0)
-log=${selfpath}/fakecron.log
+log=${selfpath}/eyc.log
 source ${selfpath}/lib.sh
 
 while getopts "f:" opt; do
