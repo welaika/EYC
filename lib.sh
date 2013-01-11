@@ -49,7 +49,7 @@ function createpid(){
     touch ${selfpath}/${frequency}/${pid}
     return 0
   else
-    echo "Script already running: pid ${frequency}/${pid} alredy present" >> $log 2>&1
+    echo "[`TZ='Europe/Rome' date`] Script already running? pid ${frequency}/${pid} alredy present" | tee -a $log
     return 1
   fi
 }
