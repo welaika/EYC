@@ -1,6 +1,6 @@
 # EYC
 
-## Extending cronjob starting from a single o few cronjobs
+## Extending cronjob starting from a single or few cronjobs
 
 EYC is an acronym which stands for Enlarge Your Cron. It is a script manager that extends your cronjobs: you invoke a single script and it wraps and launch all the scripts you want.
 
