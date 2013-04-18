@@ -40,12 +40,20 @@ function pidname(){
   pid="$(basename $1 .sh).pid"
 }
 
-function checkpid(){
-  [[ -e ${selfpath}/${frequency}/${pid} ]] && return 1 || echo "creating pid";
+function pidexists(){
+  if [[ ! -e ${selfpath}/${frequency}/${pid} ]]; then
+    return false
+  elsif [[ `find "${selfpath}/${frequency}/${pid}" -mmin +60` ]]; then
+    rm ${selfpath}/${frequency}/${pid}
+    return false
+  else
+    return true
+  fi
 }
 
 function createpid(){
-  if [[ `checkpid` ]]; then
+  if [[ ! `pidexists` ]]; then
+    echo "creating pid"
     touch ${selfpath}/${frequency}/${pid}
     return 0
   else
