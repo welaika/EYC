@@ -42,12 +42,12 @@ function pidname(){
 
 function pidexists(){
   if [[ ! -e ${selfpath}/${frequency}/${pid} ]]; then
-    return false
+    return 1
   elif [[ `find "${selfpath}/${frequency}/${pid}" -mmin +60` ]]; then
     rm ${selfpath}/${frequency}/${pid}
-    return false
+    return 1
   else
-    return true
+    return 0
   fi
 }
 
