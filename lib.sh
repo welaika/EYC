@@ -19,6 +19,7 @@ function checkfreq(){
     weekly) ;;
     daily) ;;
     fifteen) ;;
+    five) ;;
     *) usage ;;
   esac
 }
@@ -33,7 +34,7 @@ function launcher(){
       else
         echo "[`TZ='Europe/Rome' date`] $1 execution went BAD" | tee -a $log
       fi
-    ) 
+    )
 }
 
 function pidname(){

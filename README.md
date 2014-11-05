@@ -13,7 +13,7 @@ It works like this:
      |___eyc.sh -f fifteen <-- wrapper is called to look for "15mins" scripts
         |
         |__fifteen/ <-- it looks in the right dir
-          |__scriptA.sh <--\ 
+          |__scriptA.sh <--\
           |__scriptB.sh <-- - all the script inside are executed
           |__scriptC.sh <--/
 
@@ -24,11 +24,12 @@ Anyway if you are in an unix environement and you can use your cronjobs to execu
 
     ```bash
     */15 * * * * /bin/bash /path/to/script/eyc.sh -f fifteen
+    */5 * * * * /bin/bash /path/to/script/eyc.sh -f five
     0 0 * * * /bin/bash /path/to/script/eyc.sh -f daily
     5 0 1 * * /bin/bash /path/to/script/eyc.sh -f monthly
     ```
 
-* put your scripts inside the right directory; the where is self explanatory due to dir names :). We have a daily example script *HelloWorld.sh* inside *./daily/*. The name of the script is not important at all, **but, please, put the .sh extension in fron of them!**
+* put your scripts inside the right directory; the where is self explanatory due to dir names :). We have a daily example script *HelloWorld.sh* inside *./daily/*. The name of the script is not important at all, **but, please, put the .sh extension in front of them!**
 
 * while the *-f fifteen* cronjob is invoked, our script will search for *.sh in the *fifteen* dir, will execute them in order, will avoid to run them twice at the same time thanks to pidfile; pidfiles are removed when their script will be ended by a cathcable SIG*. If a pidfile remains orphan of its process, something went wrong, so we won't execute the script and we'll log the error in ./eyc.log file.
 
